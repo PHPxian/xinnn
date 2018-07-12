@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=0.5" />
+<meta name="keywords" content="TvT.一条没理想的贤鱼">
+<meta name="description" content="我喜欢看天，它能包容我所有痛苦绝望以及负面能量发泄。 我也喜欢低头看一看脚下的路，我想知道哪变了。">
+<title>小贤博客 - 记录生活点滴,关注互联网IT技术的个人博客。</title>
+<link rel="shortcut icon"  sizes="57x57" href="img/logo.png">
+<!--一些CSS-->
+<link href="css/xian.css" rel="stylesheet" type="text/css">
+</head>
+<body style="margin: auto;">
+      <div class="BJ">
+	        <div class="DW">
+                   <div class="img"></div>
+				   <div class="GZ">
+					     <h3>待我归来...</h3>
+					    <p id="t"></p>
+		           </div>
+		    </div>
+		      <div id="t"></div>
+		    <div class="xhz" ></div>
+		    <div class="yuan"></div>
+	  </div>
+	<script>
+        setInterval(function () {
+            var nowTime = new Date().getTime();
+            var futureTime = new Date("2018/08/20 00:00:00").getTime();
+            var sjc = futureTime - nowTime;
+            // console.log(futureTime,nowTime,sjc);
+            var day = parseInt(sjc / 1000 / 60 / 60 / 24);
+            var hour = parseInt(sjc / 1000 / 60 / 60 % 24);
+            var minute = parseInt(sjc / 1000 / 60 % 60);
+            var seconds = parseInt(sjc / 1000 % 60);
+            var ms = sjc % 1000;
+            // console.log(ms);
+            day = day < 10 ? "0" + day : day;
+            hour = hour < 10 ? "0" + hour : hour;
+            minute = minute < 10 ? "0" + minute : minute;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+            if (ms < 10) {
+                ms = "00" + ms;
+            } else if (ms < 100) {
+                ms = "0" + ms;
+            }
+            var time =   day + "天" + hour + "小时" + minute + "分" + seconds + "秒" + ms + "毫秒";
+            document.getElementById('t').innerHTML = time;
+        }, 1)
+    </script>
+	
+</body>
+</html>
